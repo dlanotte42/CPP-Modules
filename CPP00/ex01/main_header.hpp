@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main_header.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 18:38:55 by dlanotte          #+#    #+#             */
-/*   Updated: 2022/01/12 14:44:26 by dlanotte         ###   ########.fr       */
+/*   Created: 2021/09/17 18:39:43 by dlanotte          #+#    #+#             */
+/*   Updated: 2022/01/15 17:56:31 by dlanotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bookhead.hpp"
+#ifndef MAIN_HEADER_H
+# define MAIN_HEADER_H
 
-int main()
-{
-    std::string command;
-    
-    while (command != "EXIT")
-    {
-        std::cout << "Insert Command: ";
-        std::getline(std::cin, command);
-        if (command == "ADD")
-        {
-            std::cout << "Mortacci ADD" <<std::endl;
-        }
-        else if (command == "SEARCH")
-        {
-            
-        }
-    }
-    
-}
+# include<iostream>
+# include<string>
+# include<iomanip>
+
+typedef struct s_contact {
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
+} t_contact;
+
+class PhoneBook {
+	public:
+		t_contact phonebook_contacts[8];
+};
+
+#endif
