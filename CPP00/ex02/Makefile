@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/17 18:45:37 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/17 22:40:33 by dlanotte         ###   ########.fr        #
+#    Created: 2022/01/17 22:31:45 by dlanotte          #+#    #+#              #
+#    Updated: 2022/01/17 22:40:23 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ COLOR_OFF	= "\033[0m"
 RED			= "\033[0;31m"
 YELLOW		= "\033[0;33m" 
 
-NAME = Phonebook
+NAME = account
 
 CXX	= @ clang++
 
-SRC = main.cpp
+SRC = account.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
@@ -30,20 +30,19 @@ OBJ := ${SRC:.cpp=.o}
 all: $(NAME)
 
 title:
-	@ echo $(RED)"    ____  __                     __                __  "$(COLOR_OFF)
-	@ echo $(RED)"   / __ \/ /_  ____  ____  ___  / /_  ____  ____  / /__"$(COLOR_OFF)
-	@ echo $(RED)"  / /_/ / __ \/ __ \/ __ \/ _ \/ __ \/ __ \/ __ \/ //_/"$(COLOR_OFF)
-	@ echo $(RED)" / ____/ / / / /_/ / / / /  __/ /_/ / /_/ / /_/ / ,<   "$(COLOR_OFF)
-	@ echo $(RED)"/_/   /_/ /_/\____/_/ /_/\___/_.___/\____/\____/_/|_|  "$(COLOR_OFF)
-                                                       
-                                                     	
+	@ echo $(RED)"     _                             _   "$(COLOR_OFF)
+	@ echo $(RED)"    / \   ___ ___ ___  _   _ _ __ | |_ "$(COLOR_OFF)
+	@ echo $(RED)"   / _ \ / __/ __/ _ \| | | | '_ \| __|"$(COLOR_OFF)
+	@ echo $(RED)"  / ___ \ (_| (_| (_) | |_| | | | | |_ "$(COLOR_OFF)
+	@ echo $(RED)" /_/   \_\___\___\___/ \__,_|_| |_|\__|"$(COLOR_OFF)     
+
 $(NAME): $(OBJ) title
 	@ $(CXX) $(OBJ) -o $@
-	@ echo $(RED)" ⚒ clean completed."$(COLOR_OFF)
+	@ echo $(YELLOW)"⚒ make completed."$(COLOR_OFF)
 
 clean: title
 	@ rm -f ${OBJ}
-	@ echo $(YELLOW)"⚒ clean completed."$(COLOR_OFF)
+	@ echo $(RED)" ⚒ clean completed."$(COLOR_OFF)
 
 fclean: clean title
 	@ rm -f $(NAME)
