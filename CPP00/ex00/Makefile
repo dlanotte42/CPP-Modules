@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 16:42:13 by dlanotte          #+#    #+#              #
-#    Updated: 2021/09/17 18:33:57 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/17 22:31:31 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,16 @@ YELLOW		= "\033[0;33m"
 
 NAME = megaphone
 
-CPP	= @ clang++
+CXX	= @ clang++
 
 SRC = megaphone.cpp
 
-CFLAGS = -Wall -Wextra -Werror 
+CXXFLAGS = -Wall -Wextra -Werror 
 
 OBJ := ${SRC:.cpp=.o}
 
 %.o: %.c
-	@ $(CPP) $(CFLAGS) -c $< -o $@
+	@ $(CXX) $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -39,7 +39,7 @@ title:
 	@ echo $(RED)"               (_ /         /                               "$(COLOR_OFF)
 
 $(NAME): $(OBJ) title
-	@ $(CPP) $(OBJ) -o $@
+	@ $(CXX) $(OBJ) -o $@
 	@ echo $(YELLOW)"⚒ make completed."$(COLOR_OFF)
 
 clean: title
@@ -51,7 +51,7 @@ fclean: clean title
 	@ rm -f ${OBJ}
 	@ rm -dir -f *.dSYM
 	@ find . -name ".DS_Store" -delete
-	@ echo $(RED)"⚒ fclean completed."$(COLOR_OFF)
+	@ echo $(YELLOW)"⚒ fclean completed."$(COLOR_OFF)
 
 re: fclean all
 
