@@ -6,7 +6,7 @@
 /*   By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:39:43 by dlanotte          #+#    #+#             */
-/*   Updated: 2022/01/15 17:56:31 by dlanotte         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:48:23 by dlanotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_contact {
 class PhoneBook {
 	public:
 		t_contact phonebook_contacts[8];
+	
 };
 
 #endif
