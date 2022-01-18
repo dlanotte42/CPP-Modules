@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 16:42:13 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/17 22:31:31 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/18 19:23:16 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,16 @@ title:
 	@ echo $(RED)"                   /         /                              "$(COLOR_OFF)
 	@ echo $(RED)"               (_ /         /                               "$(COLOR_OFF)
 
-$(NAME): $(OBJ) title
+$(NAME): $(OBJ)
+	@ make title
 	@ $(CXX) $(OBJ) -o $@
 	@ echo $(YELLOW)"⚒ make completed."$(COLOR_OFF)
 
-clean: title
+clean: 
 	@ rm -f ${OBJ}
 	@ echo $(YELLOW)"⚒ clean completed."$(COLOR_OFF)
 
-fclean: clean title
+fclean: clean 
 	@ rm -f $(NAME)
 	@ rm -f ${OBJ}
 	@ rm -dir -f *.dSYM

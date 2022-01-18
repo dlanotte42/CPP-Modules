@@ -6,7 +6,7 @@
 /*   By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:38:55 by dlanotte          #+#    #+#             */
-/*   Updated: 2022/01/17 22:09:12 by dlanotte         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:18:22 by dlanotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,18 @@ static void PrintContact(PhoneBook PhoneBook, int search_index, int contact_numb
         first_name = PhoneBook.phonebook_contacts[search_index].first_name;
         last_name = PhoneBook.phonebook_contacts[search_index].last_name;
         nickname = PhoneBook.phonebook_contacts[search_index].nickname;
-        if (first_name.length() > 10){
+        if (first_name.length() > 10)
+        {
             first_name.resize(9);
             first_name.insert(9, 1, '.');
         }
-        if (last_name.length() > 10){
+        if (last_name.length() > 10)
+        {
             last_name.resize(9);
             last_name.insert(9, 1,'.' );
         }
-        if (nickname.length() > 10){
+        if (nickname.length() > 10)
+        {
             nickname.resize(9);
             nickname.insert(9, 1, '.');
         }
@@ -89,7 +92,7 @@ static void DescribeContact(PhoneBook PhoneBook, int contact_index, int contact_
     std::string     phone_number;
     std::string     darkest_secret;
     contact_index = (contact_index - 1);
-    if (contact_numbers >= contact_index)
+    if (contact_numbers >= (contact_index + 1))
     {
         first_name = PhoneBook.phonebook_contacts[contact_index].first_name;
         last_name = PhoneBook.phonebook_contacts[contact_index].last_name;
@@ -103,6 +106,10 @@ static void DescribeContact(PhoneBook PhoneBook, int contact_index, int contact_
         std::cout << std::setw(20) << "Phone number: " << phone_number << std::endl;
         std::cout << std::setw(20) << "Darkest secret: " << darkest_secret << std::endl;
         std::cout << std::setw(20) << "------------------------------------------------------------" << std::endl;
+    }
+    else
+    {
+        std::cout << "[Console] Index error" <<std::endl;
     }
 }
 
@@ -134,7 +141,8 @@ int main()
             ShowAllContact(PhoneBook, contact_numbers);
             std::cout << "[PhoneBook] Insert contact's index: ";
             std::getline(std::cin, search_index);
-            try{
+            try
+            {
                 DescribeContact(PhoneBook, std::stoi(search_index), contact_numbers);
             }
             catch (std::exception(e))

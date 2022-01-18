@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 22:31:45 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/17 22:40:23 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/18 19:27:12 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = account
 
 CXX	= @ clang++
 
-SRC = account.cpp
+SRC = account.cpp tests.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
@@ -36,15 +36,16 @@ title:
 	@ echo $(RED)"  / ___ \ (_| (_| (_) | |_| | | | | |_ "$(COLOR_OFF)
 	@ echo $(RED)" /_/   \_\___\___\___/ \__,_|_| |_|\__|"$(COLOR_OFF)     
 
-$(NAME): $(OBJ) title
+$(NAME): $(OBJ) 
+	@ make title
 	@ $(CXX) $(OBJ) -o $@
 	@ echo $(YELLOW)"⚒ make completed."$(COLOR_OFF)
 
-clean: title
+clean: 
 	@ rm -f ${OBJ}
 	@ echo $(RED)" ⚒ clean completed."$(COLOR_OFF)
 
-fclean: clean title
+fclean: clean 
 	@ rm -f $(NAME)
 	@ rm -f ${OBJ}
 	@ rm -dir -f *.dSYM

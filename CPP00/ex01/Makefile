@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 18:45:37 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/17 22:40:33 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/18 19:25:19 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,18 +34,18 @@ title:
 	@ echo $(RED)"   / __ \/ /_  ____  ____  ___  / /_  ____  ____  / /__"$(COLOR_OFF)
 	@ echo $(RED)"  / /_/ / __ \/ __ \/ __ \/ _ \/ __ \/ __ \/ __ \/ //_/"$(COLOR_OFF)
 	@ echo $(RED)" / ____/ / / / /_/ / / / /  __/ /_/ / /_/ / /_/ / ,<   "$(COLOR_OFF)
-	@ echo $(RED)"/_/   /_/ /_/\____/_/ /_/\___/_.___/\____/\____/_/|_|  "$(COLOR_OFF)
-                                                       
+	@ echo $(RED)"/_/   /_/ /_/\____/_/ /_/\___/_.___/\____/\____/_/|_|  "$(COLOR_OFF)                                               
                                                      	
-$(NAME): $(OBJ) title
+$(NAME): $(OBJ)
+	@ make title
 	@ $(CXX) $(OBJ) -o $@
-	@ echo $(RED)" ⚒ clean completed."$(COLOR_OFF)
+	@ echo $(YELLOW)"⚒ make completed."$(COLOR_OFF)
 
-clean: title
+clean: 
 	@ rm -f ${OBJ}
 	@ echo $(YELLOW)"⚒ clean completed."$(COLOR_OFF)
 
-fclean: clean title
+fclean: clean 
 	@ rm -f $(NAME)
 	@ rm -f ${OBJ}
 	@ rm -dir -f *.dSYM
