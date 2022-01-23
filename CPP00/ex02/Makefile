@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 22:31:45 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/18 19:27:12 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/23 03:47:06 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = account
 
 CXX	= @ clang++
 
-SRC = account.cpp tests.cpp
+SRC = Account.cpp tests.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
@@ -35,6 +35,8 @@ title:
 	@ echo $(RED)"   / _ \ / __/ __/ _ \| | | | '_ \| __|"$(COLOR_OFF)
 	@ echo $(RED)"  / ___ \ (_| (_| (_) | |_| | | | | |_ "$(COLOR_OFF)
 	@ echo $(RED)" /_/   \_\___\___\___/ \__,_|_| |_|\__|"$(COLOR_OFF)     
+	@ echo $(RED)" "$(COLOR_OFF)     
+	@ echo $(RED)" "$(COLOR_OFF)     
 
 $(NAME): $(OBJ) 
 	@ make title
@@ -54,4 +56,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re title

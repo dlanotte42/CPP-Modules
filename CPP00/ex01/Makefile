@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 18:45:37 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/18 19:25:19 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/23 02:45:33 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ title:
 	@ echo $(RED)"  / /_/ / __ \/ __ \/ __ \/ _ \/ __ \/ __ \/ __ \/ //_/"$(COLOR_OFF)
 	@ echo $(RED)" / ____/ / / / /_/ / / / /  __/ /_/ / /_/ / /_/ / ,<   "$(COLOR_OFF)
 	@ echo $(RED)"/_/   /_/ /_/\____/_/ /_/\___/_.___/\____/\____/_/|_|  "$(COLOR_OFF)                                               
+	@ echo $(RED)" "$(COLOR_OFF)
+	@ echo $(RED)" "$(COLOR_OFF)
                                                      	
 $(NAME): $(OBJ)
 	@ make title
