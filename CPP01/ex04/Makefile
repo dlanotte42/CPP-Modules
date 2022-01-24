@@ -6,7 +6,7 @@
 #    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 16:42:13 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/23 08:23:30 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/01/24 05:49:13 by dlanotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ COLOR_OFF	= "\033[0m"
 RED			= "\033[0;31m"
 YELLOW		= "\033[0;33m" 
 
-NAME = weapon
+NAME = replace
 
 CXX	= @ clang++
 
