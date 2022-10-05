@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zxcvbinz <zxcvbinz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 11:23:00 by dlanotte          #+#    #+#             */
-/*   Updated: 2022/10/05 19:47:28 by zxcvbinz         ###   ########.fr       */
+/*   Created: 2022/10/05 19:49:20 by zxcvbinz          #+#    #+#             */
+/*   Updated: 2022/10/05 19:53:31 by zxcvbinz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int		Fixed::getRawBits() const{
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_value);
 }
 
@@ -37,6 +36,31 @@ Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int val){
+	_value = val * (1 << Fixed::_bits);
+	std::cout << "Integer constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float val){
+	_value = (int)(roundf(val * (1 << _bits)));
+	std::cout << "Float constructor called" << std::endl;
+}
+
 Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
+}
+
+float		Fixed::toFloat(void) const {
+
+	return ((float)this->_value / (float)(1 << _bits));
+}
+
+int		Fixed::toInt(void) const {
+
+	return (this->_value / (1 << _bits));
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &a){
+	out << a.toFloat();
+	return out;
 }

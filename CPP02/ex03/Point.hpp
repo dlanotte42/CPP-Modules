@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zxcvbinz <zxcvbinz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 11:22:57 by dlanotte          #+#    #+#             */
-/*   Updated: 2022/10/05 19:45:18 by zxcvbinz         ###   ########.fr       */
+/*   Created: 2022/10/05 20:04:38 by zxcvbinz          #+#    #+#             */
+/*   Updated: 2022/10/05 20:05:30 by zxcvbinz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
+# include "Fixed.hpp"
 # include <iostream>
+# include <cmath>
 
-class Fixed{
+
+class Point{
 
 	private:
-		int _value;
-		static const int _bits = 8;
-	
+		Fixed const _x;
+		Fixed const _y;
 	public:
-		int getRawBits(void) const;
-		void setRawBits(int const x);
-		Fixed &operator=(Fixed const &copy_class);
-		Fixed();
-		Fixed(Fixed const &copy);
-		~Fixed(void);
-};
+		Point();
+		Point(Point const &p);
+		Point(float const x, float const y);
+		~Point();
+
+		Fixed const &getX(void) const;
+		Fixed const &getY(void) const;
+
+		Point &operator=(Point const &x);
+		bool operator==(Point const &p) const;
+
+};	
+
+std::ostream &operator<<(std::ostream &out, Point const &point);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
+#    By: zxcvbinz <zxcvbinz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 16:42:13 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/23 06:55:54 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/10/05 20:00:57 by zxcvbinz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ COLOR_OFF	= "\033[0m"
 RED			= "\033[0;31m"
 YELLOW		= "\033[0;33m" 
 
-NAME = zombie
+NAME = fixed2
 
 CXX	= @ clang++
 
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRC = main.cpp Fixed.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
@@ -30,10 +30,11 @@ OBJ := ${SRC:.cpp=.o}
 all: $(NAME)
 
 title:
-	@ echo $(RED)" _                                              ___"$(COLOR_OFF)
-	@ echo $(RED)"|_) __ _  o  o  o  o  o  o  o __ __ __  _  _  _  _/"$(COLOR_OFF)
-	@ echo $(RED)"|_) | (_| |  |  |  |  |  |  | | || || | /_ /_ /_/__"$(COLOR_OFF)
+	@ echo $(RED)" __               __ "$(COLOR_OFF)
+	@ echo $(RED)"|_  o     _  _|    _)"$(COLOR_OFF)
+	@ echo $(RED)"|   | >< (/_(_|   /__"$(COLOR_OFF)
 	@ echo 
+
 
 $(NAME): $(OBJ)
 	@ make title

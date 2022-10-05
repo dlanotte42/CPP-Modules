@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dlanotte <dlanotte@student.42.fr>          +#+  +:+       +#+         #
+#    By: zxcvbinz <zxcvbinz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 16:42:13 by dlanotte          #+#    #+#              #
-#    Updated: 2022/01/29 21:05:25 by dlanotte         ###   ########.fr        #
+#    Updated: 2022/10/05 19:46:19 by zxcvbinz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = orthodox
 
 CXX	= @ clang++
 
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
